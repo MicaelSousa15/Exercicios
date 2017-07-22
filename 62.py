@@ -1,0 +1,1 @@
+# É uma expressão que pode ser avaliada em verdadeiro ou falso
