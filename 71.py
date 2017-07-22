@@ -1,6 +1,6 @@
 >>> idade1 = 17
 >>> idade2 = 18
->>> idade >= 17 and idade2 >= 21
+>>> idade >= 17 and idade2 >= 18
 True
 >>> # Retorna True porque ele comparou as 2 e as 2 deu positivo
 >>> idade >= 17 or idade2
