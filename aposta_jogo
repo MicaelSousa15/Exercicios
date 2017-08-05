@@ -1,0 +1,35 @@
+import random
+dinheiro = 25
+L1 = ['Corinthians','Flamengo','Chapecoense','Coritiba','Palmeiras','Sport']
+L2 = ['Grêmio','Internacional','Fluminense','Atletico Mineiro','Goias','Bahia']
+while True:
+    time1 = random.choice(L1)
+    time2 = random.choice(L2)
+    times = time1, time2
+    print('Dinheiro: {}'.format(dinheiro))
+    aposta = int(input('[1] para {} [2] para {}: '.format(time1,time2)))
+    valor = int(input('Digite o valor a apostar: '))
+    if aposta == 1:
+        r = random.choice(times)
+        if r == time1:
+            dinheiro = dinheiro + valor * 2
+            print('\n{} {} x {} {}'.format(time1,random.randint(3,5),random.randint(0,2),time2))
+            print('Dinheiro: {}\n'.format(dinheiro))
+        if r == time2:
+            dinheiro = dinheiro - valor
+            print('\n{} {} x {} {}'.format(time1,random.randint(0,2),random.randint(3,5),time2))
+            print('Dinheiro: {}\n'.format(dinheiro))
+    else:
+        r = random.choice(times)
+        if r == time2:
+            dinheiro = dinheiro - valor
+            print('\n{} {} x {} {}'.format(time1,random.randint(3,5), random.randint(0,2),time2))
+            print('Dinheiro: {}\n'.format(dinheiro))
+        if r == time1:
+            dinheiro = dinheiro + valor * 2
+            print('\n{} {} x {} {}'.format(time1,random.randint(0,2), random.randint(3,5),time2))
+            print('Dinheiro: {}\n'.format(dinheiro))
+    if dinheiro == 0:
+        print('\nGAME OVER\n')
+        break
+
