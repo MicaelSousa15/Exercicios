@@ -1,0 +1,38 @@
+class Televisão:
+    def __init__(self,min,max):
+        self.ligada = False
+        self.canal = 14
+        self.cmin = min
+        self.cmax = max
+    def muda_canal_para_baixo(self):
+        if(self.canal-1 >= self.cmin):
+            self.canal -= 1
+        else:
+            self.canal = self.cmax
+    def muda_canal_para_cima(self):
+        if(self.canal+1 <= self.cmax):
+            self.canal += 1
+        else:
+            self.canal = self.cmin
+tv = Televisão(2,14)
+menor_opcional = int(input('Digite o canal mínimo: '))
+if menor_opcional != 0:
+    tv = Televisão(menor_opcional,15)
+else:
+    tv = Televisão(2,14)
+maior_opcional = int(input('Digite o canal máximo: '))
+if maior_opcional != 0 and maior_opcional > menor_opcional:
+    tv = Televisão(menor_opcional,maior_opcional)
+else:
+    tv = Televisão(2,14)
+
+while True:
+    n = int(input('Digite (1) parar mudar o canal pra cima (2) pra baixo: '))
+    if n == 1:
+        tv.muda_canal_para_cima()
+        print('Canal {}'.format(tv.canal))
+    elif n == 2:
+        tv.muda_canal_para_baixo()
+        print('Canal {}'.format(tv.canal))
+    elif n == 0:
+        break
