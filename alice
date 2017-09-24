@@ -1,7 +1,7 @@
 class Banco: # Cria a classe Banco
     
     def __init__(self, nome = '', saque = 0, deposito = 0, pagamento = 0, saldo = 0,): # Cria valores para usar nas variaveis abaixo
-        self.bsaldo = saldo # self.bsaldo é o nome da variavel da classe, recebe a variavel saldo
+        self.bsaldo = saldo # self.bsaldo é o nome da variavel da classe, recebe a variavel inicial de saldo
         self.bnome = nome # ''
         self.bsaque = saque # ''
         self.bpagamento = pagamento # ''
