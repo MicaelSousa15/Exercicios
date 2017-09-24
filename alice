@@ -1,0 +1,53 @@
+class Banco: # Cria a classe Banco
+    
+    def __init__(self, nome = '', saque = 0, deposito = 0, pagamento = 0, saldo = 0,): # Cria valores para usar nas variaveis abaixo
+        self.bsaldo = saldo # self.bsaldo é o nome da variavel da classe, recebe a variavel saldo
+        self.bnome = nome # ''
+        self.bsaque = saque # ''
+        self.bpagamento = pagamento # ''
+        self.bdeposito = deposito # ''
+        
+        
+    def consulta_salto(self): # Cria uma função para a consulta
+        print('\nSeu saldo é R${:.2f}'.format(self.bsaldo))
+        
+        
+    def pagamento_conta(self): # Cria uma função para pagamentos
+        banco.bpagamento = float(input('Digite o valor do pagamento: '))
+        if self.bpagamento > self.bsaldo: # se a variavel de pagamento da classe for maior que variavel de saldo da classe
+            print('\n Você não tem dinheiro suficiente para completar o pagamento\n')
+        else:
+            self.bsaldo -= self.bpagamento # senao variavel de saldo da classe -= variavel de pagamento da classe
+            
+            
+    def saque_dinheiro(self): # Cria uma função para saque
+        banco.bsaque = float(input('Digite o valor do saque: '))
+        if self.bsaque >= self.bsaldo: # se a variavel saque da classe >= variavel saldo da classe
+            print('\n Você não tem dinheiro saldo suficiente para completar o saque')
+        else:
+            self.bsaldo -= self.bsaque
+            
+            
+    def deposito_dinheiro(self): # Cria uma função para deposito
+        banco.bdeposito = float(input('Digite o valor do depósito: '))
+        self.bsaldo += self.bdeposito
+
+banco = Banco()   # banco recebe a classe Banco
+
+nome = str(input('Digite o seu nome completo: ')).title()
+banco.bsaldo = float(input('Digite o valor inicial da conta: ')) # variavel bsaldo recebe o saldo inicial que lá em cima colocamos como 0
+
+while True:
+    decisao = int(input('\n(1) Para Saque\n(2) Para Depósito\n(3) Para Pagamento\n(4) Para Consulta de Saldo\n(0) Para Cancelar: '))
+    if decisao == 1:
+        banco.saque_dinheiro() # chamamos a função saque do banco
+    elif decisao == 2:
+        banco.deposito_dinheiro() # chamamos a função deposito do banco
+    elif decisao == 3:
+        banco.pagamento_conta() # chamamos a função pagamento do banco
+    elif decisao == 4:
+        banco.consulta_salto() # chamamos a função consulta do banco
+    elif decisao == 0:
+        break
+    else:
+        print('\n Comando Inválido!')
