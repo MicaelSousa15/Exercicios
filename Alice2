@@ -1,0 +1,777 @@
+from tkinter import*
+
+janela = Tk()
+janela.title('Vida Virutal')
+janela.geometry('815x530+700+300')
+
+ano = 1
+dia = 1
+#---------------------------------------------------------------------------------------------
+#Titulos
+b_titulo1 = Label(janela, text='Jogo Vida Virtual\n'
+                               '---------------------------------------------------------')
+b_titulo1.place(x=45 ,y=15)
+
+b_ano = Label(janela, text= 'Dia {} Ano {}'.format(dia,ano))
+b_ano.place(x=225, y=180)
+
+#---------------------------------------------------------------------------------------------
+
+escola = 0
+def clique_escola():
+    global ano
+    global dia
+    global escola
+    dia += 1
+    escola += 1
+    b_estudos['text'] = 'Escola: {}'.format(escola)
+    status_estudos['text'] = 'Estudos: {}'.format(escola)
+    b_ano['text'] = 'Dia {} Ano {}'.format(dia,ano)
+    if dia == 361:
+        ano += 1
+        dia = 0
+
+dinheiro = 0
+def clique_trabalho():
+    global dinheiro
+    if emprego == 'Programador':
+        dinheiro += 122.58
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    elif emprego == 'Analista de Sistema':
+        dinheiro += 245.80
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    elif emprego == 'Chefe de Telec.':
+        dinheiro += 365.32
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    elif emprego == 'Exec. de Contas':
+        dinheiro += 838.70
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    elif emprego == 'Astrofísico':
+        dinheiro += 96774
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    b_dinheiro['text'] = 'R$ {:.2f}'.format(dinheiro)
+    trabalho['text'] = '  {}'.format(emprego)
+    status_dinheiro['text'] = 'Dinheiro: R$ {:.2f}'.format(dinheiro)
+
+
+faculdade = 0
+def clique_faculdade():
+    global faculdade
+    if escola >= 300:
+        faculdade += 1
+        b_faculdade['text'] = 'Faculdade: {}'.format(faculdade)
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    status_faculdade['text'] = 'Faculdade: {}'.format(faculdade)
+
+astronomia = 0
+def clique_astronomia():
+    global astronomia
+    global faculdade
+    global dia
+    global ano
+    if faculdade >= 4000:
+        astronomia += 1
+        b_astronomia['text'] = 'Astronomia: {}'.format(astronomia)
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+#-----------------------------------------------------------------------------
+#Casas
+casas = ''
+def compra_casa1():
+    global dinheiro
+    global casas
+    if dinheiro > 70000:
+        dinheiro -= 70000
+        casas += 'Casa Pequena '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa2():
+    global dinheiro
+    global casas
+    if dinheiro > 120000:
+        dinheiro -= 120000
+        casas += 'Casa Média '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa3():
+    global dinheiro
+    global casas
+    if dinheiro > 270000:
+        dinheiro -= 270000
+        casas += 'Casa Média-Grande '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa4():
+    global dinheiro
+    global casas
+    if dinheiro > 500000:
+        dinheiro -= 500000
+        casas += 'Casa Grande '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa5():
+    global dinheiro
+    global casas
+    if dinheiro > 700000:
+        dinheiro -= 700000
+        casas += 'Apartamento '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa6():
+    global dinheiro
+    global casas
+    if dinheiro > 1500000:
+        dinheiro -= 1500000
+        casas += 'Apartamento BM '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+def compra_casa7():
+    global dinheiro
+    global casas
+    if dinheiro > 7000000:
+        dinheiro -= 7000000
+        casas += 'Mansão '
+        status_casa['text'] = 'Casa(s): '+casas
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+
+placa_casas = Label(janela, text='Casas')
+placa_casas.place(x=440, y=15)
+
+casa1 = Button(janela, text='Casa Pequena R$70.000', width=25, command=compra_casa1)
+casa1.place(x=340, y=40)
+
+casa2 = Button(janela, text='Casa Média R$120.000', width=25, command=compra_casa2)
+casa2.place(x=340, y=72)
+
+casa3 = Button(janela, text='Casa Média-Grande R$270.000', width=25, command=compra_casa3)
+casa3.place(x=340, y=104)
+
+casa4 = Button(janela, text='Casa Grande R$500.000', width=25, command=compra_casa4)
+casa4.place(x=340, y=136)
+
+casa5 = Button(janela, text='Apartamento R$700.000', width=25, command=compra_casa5)
+casa5.place(x=340, y=168)
+
+casa6 = Button(janela, text='Apartamento BM R$1.500.000', width=25, command=compra_casa6)
+casa6.place(x=340, y=200)
+
+casa7 = Button(janela, text='Mansão R$7.000.000', width=25, command=compra_casa7)
+casa7.place(x=340, y=232)
+
+#-----------------------------------------------------------------------------
+#Motos
+motos = ''
+def comprar_moto1():
+    global dinheiro
+    global motos
+    if dinheiro > 7130:
+        dinheiro -= 7130
+        motos += 'CG 160 '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+def comprar_moto2():
+    global dinheiro
+    global motos
+    if dinheiro > 15640:
+        dinheiro -= 15640
+        motos += 'CB Twister '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_moto3():
+    global dinheiro
+    global motos
+    if dinheiro > 19990:
+        dinheiro -= 19990
+        motos += 'YFZ R3 '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_moto4():
+    global dinheiro
+    global motos
+    if dinheiro > 25900:
+        dinheiro -= 25900
+        motos += 'CB 500x '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_moto5():
+    global dinheiro
+    global motos
+    if dinheiro > 33490:
+        dinheiro -= 33490
+        motos += 'XJ6 '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_moto6():
+    global dinheiro
+    global motos
+    if dinheiro > 69900:
+        dinheiro -= 69990
+        motos += 'CB1000RR '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_moto7():
+    global dinheiro
+    global motos
+    if dinheiro > 119900:
+        dinheiro -= 119900
+        motos += 'GL 1800 Gold '
+        status_motos['text'] = 'Moto(s): '+motos
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+
+placa_motos = Label(janela,text='Motos')
+placa_motos.place(x=440, y=268)
+
+moto1 = Button(janela, text='CG 160 R$7.130',width=20,command=comprar_moto1)
+moto1.place(x=360, y=294)
+
+moto2 = Button(janela, text='CB Twister R$15.640',width=20,command=comprar_moto2)
+moto2.place(x=360, y=326)
+
+moto3 = Button(janela, text='YFZ R3 R$19.990',width=20,command=comprar_moto3)
+moto3.place(x=360, y=358)
+
+moto4 = Button(janela, text='CB 500x R$25.900',width=20,command=comprar_moto4)
+moto4.place(x=360, y=390)
+
+moto5 = Button(janela, text='Yamanha XJ6 R$33.490',width=20,command=comprar_moto5)
+moto5.place(x=360, y=422)
+
+moto6 = Button(janela, text='CB1000RR R$69.900',width=20,command=comprar_moto6)
+moto6.place(x=360, y=454)
+
+moto7 = Button(janela, text='GL 1800 Gold R$119.900',width=20,command=comprar_moto7)
+moto7.place(x=360, y=486)
+
+#-----------------------------------------------------------------------------
+carros = ''
+def comprar_carro1():
+    global dinheiro
+    global carros
+    if dinheiro > 42410:
+        dinheiro -= 42410
+        carros += 'Fiat Pálio '
+        status_carros['text'] = 'Carro(s): '+carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+
+def comprar_carro2():
+    global dinheiro
+    global carros
+    if dinheiro > 46800:
+        dinheiro -= 46800
+        carros += 'Fiat Argo '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro3():
+    global dinheiro
+    global carros
+    if dinheiro > 47000:
+        dinheiro -= 47000
+        carros += 'Chevrolet Ónix '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro4():
+    global dinheiro
+    global carros
+    if dinheiro > 119900:
+        dinheiro -= 119900
+        carros += 'Ford Fusion '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro5():
+    global dinheiro
+    global carros
+    if dinheiro > 126000:
+        dinheiro -= 126000
+        carros += 'Honda Civic '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro6():
+    global dinheiro
+    global carros
+    if dinheiro > 236000:
+        dinheiro -= 236000
+        carros += 'Chevrolet Camaro '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro7():
+    global dinheiro
+    global carros
+    if dinheiro > 619000:
+        dinheiro -= 619000
+        carros += 'Porsche Cayenne '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro8():
+    global dinheiro
+    global carros
+    if dinheiro > 1950000:
+        dinheiro -= 1950000
+        carros += 'Ferrari Itália '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def comprar_carro9():
+    global dinheiro
+    global carros
+    if dinheiro > 3200000:
+        dinheiro -= 3200000
+        carros += 'Lamborghini A. '
+        status_carros['text'] = 'Carro(s): ' + carros
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+placa_concessionaria = Label(janela, text='Concessionária')
+placa_concessionaria.place(x=652, y=15)
+
+carro1 = Button(janela, text='Fiat Pálio R$42.410', width=22, command=comprar_carro1)
+carro1.place(x=598, y=40)
+
+carro2 = Button(janela, text='Fiat Argo R$46.800', width=22, command=comprar_carro2)
+carro2.place(x=598, y=72)
+
+carro3 = Button(janela, text='Chevrolet Ónix R$47.000', width=22, command=comprar_carro3)
+carro3.place(x=598, y=104)
+
+carro4 = Button(janela, text='Ford Fusion R$119.900', width=22, command=comprar_carro4)
+carro4.place(x=598, y=136)
+
+carro5 = Button(janela, text='Honda Civic R$126.000', width=22, command=comprar_carro5)
+carro5.place(x=598, y=168)
+
+carro6 = Button(janela, text='Chevrolet Camaro R$236.000', width=22, command=comprar_carro6)
+carro6.place(x=598, y=200)
+
+carro7 = Button(janela, text='Porsche Cayenne R$619.000', width=22, command=comprar_carro7)
+carro7.place(x=598, y=232)
+
+carro8 = Button(janela, text='Ferrari Itália R$1.950.000', width=22, command=comprar_carro8)
+carro8.place(x=598, y=264)
+
+carro9 = Button(janela, text='Lamborghini A. R$3.200.000', width=22, command=comprar_carro9)
+carro9.place(x=598, y=296)
+
+#------------------------------------------------------------------------------------
+#Trabalhos
+
+emprego = ''
+def emprego_1():
+    global emprego
+    global faculdade
+    if faculdade >= 200:
+        faculdade -= 200
+        emprego = 'Programador'
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def emprego_2():
+    global emprego
+    global faculdade
+    if faculdade >= 700:
+        faculdade -= 700
+        emprego = 'Analista de Sistema'
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def emprego_3():
+    global emprego
+    global faculdade
+    if faculdade >= 1400:
+        faculdade -= 1400
+        emprego = 'Chefe de Telec.'
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def emprego_4():
+    global emprego
+    global faculdade
+    if faculdade >= 2000:
+        faculdade -= 2000
+        emprego = 'Exec. de Contas'
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+def emprego_5():
+    global emprego
+    global astronomia
+    if astronomia >= 5000:
+        emprego = 'Astrofísico'
+        global dia
+        global ano
+        dia += 1
+        b_ano['text'] = 'Dia {} Ano {}'.format(dia, ano)
+        if dia == 361:
+            ano += 1
+            dia = 0
+    else:
+        print()
+
+placa_emprego = Label(janela, text='Empregos')
+placa_emprego.place(x=665, y=332)
+
+emprego1 = Button(janela, text='Programador R$3.800', width=22, command=emprego_1)
+emprego1.place(x=598, y=358)
+
+emprego2 = Button(janela, text='Analista de Sistema R$7.620', width=22, command=emprego_2)
+emprego2.place(x=598, y=390)
+
+emprego3 = Button(janela, text='Chefe de Telec. R$11.325', width=22, command=emprego_3)
+emprego3.place(x=598, y=422)
+
+emprego4 = Button(janela, text='Exec. de Contas R$26.000', width=22, command=emprego_4)
+emprego4.place(x=598, y=454)
+
+emprego5 = Button(janela, text='Astrofísico R$3.000.000', width=22, command=emprego_5)
+emprego5.place(x=598, y=486)
+
+#------------------------------------------------------------------------------------
+#Menu
+
+b_estudos = Label(janela, text='Escola: 0')
+b_estudos.place(x=50 ,y=60)
+
+botao_estudos = Button(janela, text='Estudar', width=10,command=clique_escola)
+botao_estudos.place(x=30 , y=80)
+
+b_faculdade = Label(janela, text='Faculdade: 0')
+b_faculdade.place(x=190 ,y=60)
+
+botao_faculdade = Button(janela, text='Estudar', width=10,command=clique_faculdade)
+botao_faculdade.place(x=180 , y=80)
+
+trabalho = Label(janela, text='           ---------'.format(emprego))
+trabalho.place(x=20,y=120)
+
+botao_trabalho = Button(janela, text='Trabalhar', width=10, command=clique_trabalho)
+botao_trabalho.place(x=30, y=140)
+
+botao_astronomia = Button(janela, text='Estudar', width=10, command=clique_astronomia)
+botao_astronomia.place(x=180, y=140)
+
+b_astronomia = Label(janela, text='Astronomia: 0')
+b_astronomia.place(x=190, y=120)
+
+b_dinheiro = Label(janela, text='R$ 0')
+b_dinheiro.place(x=30, y= 180)
+
+b_placa = Label(janela, text='----------------------------------------------------------------------------')
+b_placa.place(x=11, y=195)
+
+
+#------------------------------------------------------------------------------------
+#Status
+
+placa_status = Label(janela,text='----------------------------------------------------------------------------\n'
+                                 'Status')
+placa_status.place(x=15, y=352)
+
+status_estudos = Label(janela,text='Estudos: {}'.format(escola))
+status_estudos.place(x=15, y=382)
+
+status_faculdade = Label(janela,text='Faculdade: {}'.format(faculdade))
+status_faculdade.place(x=15, y=402)
+
+status_carros = Label(janela,text='Carro(s): '.format(carros))
+status_carros.place(x=15, y=422)
+
+status_motos = Label(janela,text='Moto(s): ')
+status_motos.place(x=15, y=442)
+
+status_casa = Label(janela,text='Casa(s): ')
+status_casa.place(x=15, y=462)
+
+status_dinheiro = Label(janela,text='Dinheiro: R${:.2f} '.format(dinheiro))
+status_dinheiro.place(x=15, y=482)
+
+status_genialidade = Label(janela,text='Genialidade: ')
+status_genialidade.place(x=15, y=502)
+
+#------------------------------------------------------------------------------------
+genialidade = ''
+if escola <= 300:
+    genialidade = 'Nenhuma'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+if escola >= 700:
+    genialidade = 'Estudante'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+if faculdade > 700:
+    genialidade = 'Júnior'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+if faculdade > 1400:
+    genialidade = 'Professor'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+if faculdade > 2000:
+    genialidade = 'Mestre'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+if astronomia > 5000:
+    genialidade = 'Gênio'
+    status_genialidade['text'] = 'Genialidade: {}'.format(genialidade)
+
+#------------------------------------------------------------------------------------
+tutorial1 = Label(janela, text='Faculdade - Escola {}/300'.format(escola))
+tutorial2 = Label(janela, text='Astronomia - Faculdade {}/4000'.format(faculdade))
+tutorial3 = Label(janela, text='Programador - Faculdade {}/200'.format(faculdade))
+tutorial4 = Label(janela, text='Analista de Sistemas - Faculdade {}/700'.format(faculdade))
+tutorial5 = Label(janela, text='Chefe de Telecomunicações - Faculdade {}/1400'.format(faculdade))
+tutorial6 = Label(janela, text='Executivo de Contas - Faculdade 200'.format(faculdade))
+tutorial7 = Label(janela, text='Astrofisico - Astronomia {}/5000'.format(astronomia))
+
+tutorial1.place(x=15, y=215)
+tutorial2.place(x=15, y=235)
+tutorial3.place(x=15, y=255)
+tutorial4.place(x=15, y=275)
+tutorial5.place(x=15, y=295)
+tutorial6.place(x=15, y=315)
+tutorial7.place(x=15, y=335)
+
+janela.mainloop()
+
