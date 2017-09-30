@@ -763,7 +763,7 @@ tutorial3 = Label(janela, text='Programador - Faculdade {}/200'.format(faculdade
 tutorial4 = Label(janela, text='Analista de Sistemas - Faculdade {}/700'.format(faculdade))
 tutorial5 = Label(janela, text='Chefe de Telecomunicações - Faculdade {}/1400'.format(faculdade))
 tutorial6 = Label(janela, text='Executivo de Contas - Faculdade 200'.format(faculdade))
-tutorial7 = Label(janela, text='Astrofisico - Astronomia {}/5000'.format(astronomia))
+tutorial7 = Label(janela, text='Astrofisico - Faculdade {}/5000'.format(astronomia))
 
 tutorial1.place(x=15, y=215)
 tutorial2.place(x=15, y=235)
